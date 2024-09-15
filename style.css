@@ -224,6 +224,9 @@ header {
 .button-with-icon:hover .text {
   transform: translateX(80px);
 }
+.button-with-icon:hover{
+  background-color: #8a1111;
+}
 
 .button-with-icon:hover .icon {
   transform: translate(23px);
