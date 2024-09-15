@@ -10,7 +10,7 @@ body {
 }
 
 /* Responsive adjustments for mobile screens */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .muscle-group-selection {
       flex-wrap: wrap; /* Allows buttons to wrap onto new lines */
       gap: 5px; /* Reduce the gap between buttons */
@@ -58,6 +58,7 @@ p{
     position: fixed;
     right: 0;
     bottom: 0;
+    height: 50vh; /* Reduce video container height */
     min-width: 100%; 
     min-height: 100%;
     z-index: -1;
