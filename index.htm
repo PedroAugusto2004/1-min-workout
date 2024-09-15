@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Minute Workout Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="MBlogo.png">
+     <!-- Google Font: Bebas Neue -->
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>1-Minute Workout Challenge</h1>
+            <p>Select a muscle group to get started!</p>
+        </header>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline id="background-video">
+    <source src="videos/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+        <main>
+            <!-- Section to Select Muscle Group -->
+            <div class="muscle-group-selection">
+                <button class="muscle-btn animated-button" data-group="upper-body">
+                    <span>Upper Body</span>
+                    <span></span>
+                </button>
+                <button class="muscle-btn animated-button" data-group="lower-body">
+                    <span>Lower Body</span>
+                    <span></span>
+                </button>
+                <button class="muscle-btn animated-button" data-group="core">
+                    <span>Core</span>
+                    <span></span>
+                </button>
+                <button class="muscle-btn animated-button" data-group="full-body">
+                    <span>Full Body</span>
+                    <span></span>
+                </button>
+            </div>
+            
+<!-- Exercise Videos -->
+<div id="illustration">
+    <video id="pushups-video" class="exercise-video" src="videos/pushups.mp4" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="shoulder-taps-video" class="exercise-video" src="videos/shoulder taps.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="tricep-dips-video" class="exercise-video" src="videos/dips.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+
+    <video id="squats-video" class="exercise-video" src="videos/squats.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="lunges-video" class="exercise-video" src="videos/lunges.mp4" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="step-ups-video" class="exercise-video" src="videos/step ups.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+
+    <video id="plank-video" class="exercise-video" src="videos/planks.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="situps-video" class="exercise-video" src="videos/sit ups.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="leg-raises-video" class="exercise-video" src="videos/leg raises.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+
+    <video id="burpees-video" class="exercise-video" src="videos/burpees.mp4" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="jumping-jacks-video" class="exercise-video" src="videos/jumping jacks.mp4" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+    <video id="mountain-climbers-video" class="exercise-video" src="videos/Mountain climber.mov" type="video/mp4" controls autoplay loop muted hidden playsinline></video>
+</div>
+
+
+            <div class="workout-box" id="workout-box">
+                <!-- Workout Instructions -->
+                <div id="workout-instructions">
+                    <h2>Workout Instructions</h2>
+                    <p id="exercise">Select a muscle group to begin and you will have 60 seconds to complete!</p>
+                </div>
+
+                <!-- Timer -->
+                <div class="timer-box">
+                    <p class="timer" id="countdown">60</p>
+                </div>
+
+
+                <div class="control-buttons">
+                    <button id="start-button" class="button-with-icon">
+                        <svg
+                            class="icon"
+                            id="Play"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                class="color000000 svgShape"
+                                fill="#ffffff"
+                                d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+                            ></path>
+                        </svg>
+                        <span class="text">START</span>
+                    </button>
+                
+                    <button id="stop-button" class="control-btn" disabled>Stop</button>
+                    <button id="reset-button" class="control-btn" disabled>Reset</button>
+                </div>
+                
+                <!-- Motivational Message -->
+                <div id="motivational-message" class="motivational-message"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Muscles & Balance</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
