@@ -1,1 +1,3 @@
-# 1-min-workout
+# 1 min workout challenge
+
+The 1-Minute Workout Challenge is a fast-paced and engaging fitness mini-game designed to push you to your limits in just 60 seconds. Each session offers a randomized set of exercises targeting different muscle groups—upper body, lower body, core, and full body—giving you a full workout experience in a short time. You’ll perform a variety of exercises such as push-ups, squats, planks, and jumping jacks, with video demonstrations to guide you through each move. The challenge includes a built-in timer and dynamic exercise shifts every 20 seconds, keeping you on your toes. Perfect for a quick fitness boost, it’s a fun way to stay active and track your progress. Complete the challenge and receive motivational messages to keep you inspired on your fitness journey!
