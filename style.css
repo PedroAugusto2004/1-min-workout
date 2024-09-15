@@ -38,9 +38,6 @@ body {
       font-size: 36px; /* Smaller font for the timer on mobile */
   }
 
-  .video-container {
-      height: 50vh; /* Reduce video container height */
-  }
 }
 
 
@@ -55,23 +52,33 @@ p{
 }
 /* Background Video */
 #background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    height: 50vh; /* Reduce video container height */
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    filter: brightness(50%); /* Optional: adjust brightness for better text visibility */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw; /* Ensure full viewport width */
+  height: 100vh; /* Ensure full viewport height */
+  object-fit: cover; /* Ensure the video covers the entire container */
+  z-index: -1;
+  filter: brightness(50%); /* Optional: adjust brightness for better text visibility */
 }
+
+/* Mobile Optimizations */
+@media only screen and (max-width: 768px) {
+  #background-video {
+      height: 100vh; /* Full height for mobile */
+      width: 100vw;  /* Full width for mobile */
+      object-fit: cover; /* Ensures the video covers the whole screen */
+      filter: brightness(50%);
+  }
+}
+
 /* Exercise videos */
 
 .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh; /* Adjust the height of the video container */
+    height: 50vh; /* Adjust the height of the video container */
     margin-top: 20px;
 }
 
@@ -254,6 +261,81 @@ header {
 
 #stop-button:active, #reset-button:active {
   transform: translateY(-1px);
+}
+
+/* Return Button */
+ 
+.button {
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.button:before {
+  border: 4px solid #f0eeef;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button:after {
+  border: 4px solid #96daf0;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover:after,
+.button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
+  fill: #f0eeef;
+}
+
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
 }
 
 /* Motivational Message */
