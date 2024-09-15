@@ -28,6 +28,7 @@ let selectedExercises = [];
 let timer = 60;
 let interval;
 let isPaused = false;
+let currentIndex = 0;
 
 // Select muscle group and start challenge
 document.querySelectorAll('.muscle-btn').forEach(btn => {
@@ -75,6 +76,7 @@ function startChallenge() {
     } else {
         timer = 60;  // Reset the timer to 60 seconds
         document.getElementById('countdown').innerText = timer;
+        currentIndex = 0;  // Reset the video index
         updateWorkout();  // Display the first exercise
     }
 
@@ -130,24 +132,33 @@ function updateTimer() {
     } else {
         clearInterval(interval);  // Stop the countdown when timer reaches zero
         showMotivationalMessage();
+
+        // Pause the currently playing video when the timer ends
+        const playingVideo = document.querySelector('.exercise-video:not([hidden])');
+        if (playingVideo) {
+            playingVideo.pause();
+        }
     }
 }
 
 // Display the workout exercise and corresponding video
 function updateWorkout() {
-    const exercise = selectedExercises[Math.floor(Math.random() * selectedExercises.length)];
-    document.getElementById('exercise').innerText = `${exercise.reps || exercise.duration} ${exercise.name}`;
-
     // Hide all videos
     document.querySelectorAll('.exercise-video').forEach(video => {
         video.hidden = true;
         video.pause();
     });
 
-    // Show the correct video for the selected exercise
+    // Show the correct video for the current exercise
+    const exercise = selectedExercises[currentIndex];
+    document.getElementById('exercise').innerText = `${exercise.reps || exercise.duration} ${exercise.name}`;
+    
     const currentVideo = document.getElementById(exercise.videoId);
     currentVideo.hidden = false;
     currentVideo.play();
+
+    // Update index to the next exercise
+    currentIndex = (currentIndex + 1) % selectedExercises.length;
 }
 
 // Show a motivational message when the timer ends
