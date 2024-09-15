@@ -258,6 +258,18 @@ header {
 
 /* Footer */
 footer {
-    margin-top: 20px;
-    color: #888;
+  background-color: #33333300; /* Change this to your desired background color */
+  color: #fff; /* Change the text color */
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #000000; /* Change this to your desired link color */
+  text-decoration: none; /* Removes the underline */
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #313131; /* Optional: Change link color on hover */
 }
